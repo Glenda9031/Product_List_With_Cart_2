@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
+
+:root {
+    --red: hsl(14, 86%, 42%);
+    --green: hsl(159, 69%, 38%);
+    --rose-50: hsl(20, 50%, 98%);
+    --rose-100: hsl(13, 31%, 94%);
+    --rose-300: hsl(14, 25%, 72%);
+    --rose-400: hsl(7, 20%, 60%);
+    --rose-500: hsl(12, 20%, 44%);
+    --rose-900: hsl(14, 65%, 9%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+    background-color: var(--rose-50);
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+    transition: all 0.3s linear;
+}
+
+.container {
+    margin: 3.125rem 3.125rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.875rem; 
+}
+
+@media (min-width: 75rem) {
+    .container {
+        margin: 3.125rem 3.125rem;
+        position: relative;
+        align-items: flex-start;
+        min-height: 100vh;
+    }
+}
+
+@media (min-width: 48rem) {
+    .container main {
+        width: calc(70% - 1.875rem);
+    }
+
+    .container aside {
+        width: 50%;
+    }
+
+    .container main {
+        width: 100%;
+    }
+
+    .container main h1 {
+        font-size: 1.875rem;
+        text-transform: capitalize;
+        margin-bottom: 1.875rem;
+    }
+
+    .container main .contents {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.875rem;
+    }
+
+    .container main .contents .content {
+        width: 100%;
+    }
+    
+
+}
+
+
+
+
+
+
+
