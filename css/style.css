@@ -37,7 +37,16 @@ button {
 
 @media (min-width: 75rem) {
     .container {
+        margin: 3.125rem 5rem;
+    }
+}
+
+@media (min-width: 48rem) and (max-width: 74.9375rem) {
+    .container {
         margin: 3.125rem 3.125rem;
+    }
+
+    .container {
         position: relative;
         align-items: flex-start;
         min-height: 100vh;
@@ -48,9 +57,8 @@ button {
     .container main {
         width: calc(70% - 1.875rem);
     }
-
     .container aside {
-        width: 50%;
+        width: 30%;
     }
 
     .container main {
@@ -66,15 +74,16 @@ button {
     .container main .contents {
         display: flex;
         flex-wrap: wrap;
+        color:
         gap: 1.875rem;
     }
 
     .container main .contents .content {
         width: 100%;
     }
-    
-
 }
+
+
 
 
 
