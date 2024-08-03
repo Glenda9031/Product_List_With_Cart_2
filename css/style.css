@@ -1,23 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
 
-:root {
-    --red: hsl(14, 86%, 42%);
-    --green: hsl(159, 69%, 38%);
-    --rose-50: hsl(20, 50%, 98%);
-    --rose-100: hsl(13, 31%, 94%);
-    --rose-300: hsl(14, 25%, 72%);
-    --rose-400: hsl(7, 20%, 60%);
-    --rose-500: hsl(12, 20%, 44%);
-    --rose-900: hsl(14, 65%, 9%);
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
 body {
-    background-color: var(--rose-50);
+    background-color: #f4edeb;;
 }
 
 button {
@@ -68,13 +57,14 @@ button {
     .container main h1 {
         font-size: 1.875rem;
         text-transform: capitalize;
+        color: #260f08;
         margin-bottom: 1.875rem;
     }
 
     .container main .contents {
         display: flex;
         flex-wrap: wrap;
-        color:
+        color: 
         gap: 1.875rem;
     }
 
@@ -197,15 +187,254 @@ button {
         border-bottom: .0625rem solid #f4edeb;
     }
 
+    .container aside .items .item .product-info .name {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #260f08;
+        text-transform: capitalize;
+        margin-bottom: .3125rem;
+    }
+
+    .container aside .items .item .product-info .num-items {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .9375rem;
+        font-size: 1rem;
+        color: #ad8985;
+    }
+
+    .container aside .items .item .product-info .num-items .quantity {
+        color: #c73a0f;
+        font-weight: 600;
+    }
+
+    .container aside .items .item .remove-item {
+        border: .0625rem solid #c9aea6;
+        outline: none;
+        background: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: .3125rem;
+        width: 1.25rem;
+        border-radius: 50%;
+        transition: .3s linear;
+        cursor: pointer;
+    }
+
+    .container aside .items .item .remove-item i {
+        color: #c9aea6;
+        transition: .3s linear;
+    }
+
+    .container aside .items .item .remove-item:hover {
+        border-color: #260f08;
+    }
+
+    .container aside .items .item .remove-item:hover i {
+        color: #260f08;
+    }
+
+    .container aside .items .total-amount .total {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1.25rem;
+    }
+
+    .container aside .items .total-amount .total span {
+        font-size: 1rem;
+        color: #260f08;
+        text-transform: capitalize;
+    }
+
+    .container aside .items .total-amount .total span.bold {
+        font-size: 1.625rem;
+        font-weight: 600;
+    }
     
+    .container aside .items .total-amount .tree {
+        padding: .9375rem 1.25rem;
+        border-radius: .375rem;
+        background-color: #f4edeb;
+        text-align: center;
+        margin-bottom: 1.25rem;
+    }
 
+    .container aside .items .total-amount .tree img {
+        vertical-align: middle;
+    }
 
+    .container aside .items .total-amount .tree span {
+        font-size: 1rem;
+        color: #260f08;
+    }
 
+    .container aside .items .total-amount .tree span .bold {
+        font-weight: 600;
+    }
 
+    .container aside .items .total-amount .confirm-btn button {
+        display: block;
+        width: 100%;
+        padding: .9375rem 1.25rem;
+        border-radius: 1.875rem;
+        border: none;
+        outline: none;
+        background-color: #c73a0f;
+        color: #fcf9f7;
+        font-size: 1.125rem;
+        font-weight: 500;
+        cursor: pointer;
+        text-align: center;
+        text-transform: capitalize;
+        transition: .3s linear;
+    }
 
+    .container aside .items .total-amount .confirm-btn button:hover {
+        background-color: rgba(199, 58, 15, 0.8);
+    } 
 
+    .container .confirm-window {
+        position: absolute;
+        top: 10%;
+        left: 30%;
+        transform: translate(-30%, -10%);
+        background-color: #fcf9f7;
+        border-radius: .625rem;
+        padding: 1.875rem 1.25rem;
+        width: 80%;
+    }
+}
 
+@media (min-width: 48rem) {
+    .container .confirm-window {
+        width: 31.25rem;
+    }
 
+    .container .confirm-window .check-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.5625rem;
+        height: 1.5625rem;
+        border: .0625rem solid #1ea475;
+        border-radius: 50%;
+        color: #1ea475;
+        margin-bottom: 1.25rem;
+    }
+
+    .container .confirm-window h3 {
+        font-size: 1.875rem;
+        font-weight: 700;
+        color: #260f08;
+        text-transform: capitalize;
+    }
+
+    .container .confirm-window p {
+        font-size: 1rem;
+        color: #ad8985;
+        font-weight: 300;
+    }
+
+    .container .confirm-window .picked-items {
+        margin-top: 1.875rem;
+        background-color: #f4edeb;
+        padding: .625rem;
+        border-radius: .625rem;
+    }
+
+    .container .confirm-window .picked-items .picked-item {
+        padding-bottom: .625rem;
+        margin-bottom: .625rem;
+        border-bottom: .0625rem solid #c9aea6;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .container .confirm-window .picked-items .picked-item .thumb {
+        display: flex;
+        align-items: center;
+        gap: .625rem;
+    }
+
+    .container .confirm-window .picked-items .picked-item .thumb img {
+        width: 3.75rem;
+        border-radius: .25rem;
+    }
+
+    .container .confirm-window .picked-items .picked-item .thumb .food-info h4 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #260f08;
+        text-transform: capitalize;
+        margin-bottom: .625rem;
+    }
+    
+    .container .confirm-window .picked-items .picked-item .thumb .food-info div {
+        display: flex;
+        align-items: center;
+        gap: .9375rem;
+    }
+
+    .container .confirm-window .picked-items .picked-item .thumb .food-info div span {
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    .container .confirm-window .picked-items .picked-item .thumb .food-info div span.red {
+        color: #c73a0f;
+        font-weight: 600;
+    }
+    
+    .container .confirm-window .picked-items .picked-item .thumb .food-info div span.single-price {
+        color: #c9aea6;
+    }
+    
+    .container .confirm-window .picked-items .picked-item .total-payed-price {
+        font-size: 1.625rem;
+        font-weight: 600;
+        color: #260f08;
+    }
+
+    .container .confirm-window .total {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1.25rem;
+    }
+
+    .container .confirm-window .total span {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #260f08;
+        text-transform: capitalize;
+    }
+
+    .container .confirm-window .total span.bold {
+        font-size: 1.625rem;
+        font-weight: 600;
+    }
+    
+    .container .confirm-window button {
+        margin-top: 1.875rem;
+        text-align: center;
+        display: block;
+        width: 100%;
+        border-radius: 1.875rem;
+        padding: .9375rem 1.25rem;
+        background-color: #c73a0f;
+        color: #fcf9f7;
+        font-size: 1.125rem;
+        font-weight: 500;
+        text-transform: capitalize;
+    }
+
+    .container .confirm-window button:hover {
+        background-color: rgba(199, 58, 15, 0.8);
+    } 
 }
 
 
