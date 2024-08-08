@@ -110,6 +110,20 @@ const contents = document.querySelector(".contents");
                 </button>
               </div>`;
 
+              if (!document.querySelector(.items .total-amount)) {
+                let totalContent = document.createElement("div");
+                totalContent.classList.add("total-amount");
+                totalContent.innerHTML = `
+                    <div class="total">
+                        <span>Order total</span>
+                        <span class="bold">$<span class="total-to-pay bold">${updateAllPrice()}</span></span>
+                        </div>
+                        <div class="tree">
+                            <img src="./assets/images/icon-carbon-neutral.svg" alt="">
+                            
+                `
+              }
+
               
         })
     }
