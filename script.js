@@ -110,7 +110,7 @@ const contents = document.querySelector(".contents");
                 </button>
               </div>`;
 
-              if (!document.querySelector(.items .total-amount)) {
+              if (!document.querySelector(".items .total-amount")) {
                 let totalContent = document.createElement("div");
                 totalContent.classList.add("total-amount");
                 totalContent.innerHTML = `
@@ -120,13 +120,55 @@ const contents = document.querySelector(".contents");
                         </div>
                         <div class="tree">
                             <img src="./assets/images/icon-carbon-neutral.svg" alt="">
-                            
-                `
+                            <span>This is a<span class="bold">carbon-neutral</span> delivery</span>
+                            </div>
+                            <div class="confirm-btn">
+                                <button>Confirm order</button>
+                             </div>`;
+                             cart.appendChild(item);
+                             cart.appendChild(totalContent);
+              } else {
+                cart.insertBefore(item, document.querySelector("items, .total-amount"));
+                document.querySelector(".total-to-pay bold").textContent = updateAllPrice();
               }
-
-              
-        })
+              let removeBtn = document.querySelectorAll(".remove-item");
+              removeBtn.forEach((btn) => 
+                btn.addEventListener("click", function () {
+                    let itemName = this.dataset.name;
+                    let index;
+                    if (let item of cartList) {
+                        if (item.name === itemName) {
+                            index = cartList.indexOf(item);
+                            removeFromCart(index);
+                            return;
+                        }
+                    }
+                })
+            );
+        });
+        const confirmBtn = document.querySelector(".confirm-btn");
+        confirmBtn.addEventListener("click", function () {
+            confirmOrders();
+            document.querySelector(".confirm-window button").addEventListener("click", function () {
+                window.location.reload();
+            })
+        });
     }
+
+    function addToCart(category, name, price) {
+        const existingItem = cartList.find((item) => item.name === name);
+        if (existingItem) {
+            /* existingItem.quantity++;*/
+            return;
+        } else {
+            cartList.push({ category, name, price, quantity: 1 });
+        }
+        getAllItems();
+        updateCartUI();
+    }
+
+    // this does not work well
+    
 
 
 
