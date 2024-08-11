@@ -168,7 +168,107 @@ const contents = document.querySelector(".contents");
     }
 
     // this does not work well
-    
+    function removeFromCart(index) {
+        cartList.splice(index) {
+            document.querySelector(".total-to-pay bold").textContent = updateAllPrice();
+            getAllItems();
+            updateCartUI(); 
+        }
+
+        function increaseItemQuantity(index) {
+            cartList[index].quantity++;
+            document.querySelector(".total-to-pay bold").textContent = updateAllPrice();
+            getAllItems();
+            updateCartUI();
+        }
+
+        function decreaseItemQuantity(index) {
+            if cartList([index].quantity > 1) {
+                cartList[index].quantity--;
+            } else {
+                cartList.splice(index, 1);
+                return;
+            }
+            document.querySelector(".total-to-pay bold").textContent = updateAllPrice();
+            getAllItems();
+            updateCartUI();
+        }
+
+        function updateAllPrice() {
+            let allPrice = 0;
+            cartList.forEach((item) => {
+                allPrice += item.price * item.quantity;
+            });
+            return allPrice;
+        }
+
+        let addBtns = document.querySelectorAll(".content .image button");
+        const cart = document.querySelector(".aside" .items);
+        addBtns.forEach((btn) => {
+            btn.addEventListener("click", function () {
+                if (document.querySelector(".empty-cart")) {
+                    document.querySelector(".empty-cart").remove();
+                }
+                let index = parseInt(this.dataset.thumb);
+                addToCart(categories[index], names[index], prices[index]);
+                let idx;
+                for (let item of cartList) {
+                    let thumbName = this.dataset.name;
+                    if (item.name === thumbName) {
+                        idx = cartList.indexOf(item);
+                        break;
+                    }
+                }
+
+                this.innerHTML = `
+                
+                <button class="increase-item" data-name="${cartList[idx].name}">+</button>
+                <span>${cartList[idx],quantity}</span>
+                <button class="decrease-item" data-set="${cartList[idx].name}">-</button>
+                `;
+                if (this.querySelector(".content button button")) {
+                    this.querySelector(".increase-item").addEventListener("click",
+                        function () {
+                            let name = this.dataset.name;
+                            let idx;
+                            for (let item of cartList) {
+                                if (item.name == name) {
+                                    idx = cartList.indexOf(item);
+                                    break;
+                                }
+                            }
+                            increaseItemQuantity(idx);
+                        }
+                    );
+                    this.querySelector(".decrease-item").addEventListener("click",
+                        function () {
+                            let name = this.dataset.name;
+                            let idx;
+                            for (let item of cartList) {
+                                if (item.name == name) {
+                                    idx = cartList.indexOf(item);
+                                    break;
+                                }
+                            }
+                            decreaseItemQuantity(idx);
+                        }
+                    );
+                }
+            });
+
+            function confirmOrders() {
+                let box = document.createElement("div");
+                box.classList.add("confirm-window");
+                box.innerHTML = `
+                    <div class="check-icon">
+                        <i class="fa-solid fa-check"></i>
+                    </div>
+                    <h3>Order confirmation</h3>
+                    <p>We hope you enjoy your food</p>
+                `;
+            }
+        })
+    }
 
 
 
